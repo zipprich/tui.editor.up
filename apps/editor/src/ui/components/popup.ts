@@ -34,12 +34,12 @@ export class Popup extends Component<Props, State> {
   };
 
   mounted() {
-    document.addEventListener('mousedown', this.handleMousedown);
+    document.addEventListener('click', this.handleMousedown);
     this.props.eventEmitter.listen('closePopup', this.props.hidePopup);
   }
 
   beforeDestroy() {
-    document.removeEventListener('mousedown', this.handleMousedown);
+    document.removeEventListener('click', this.handleMousedown);
   }
 
   updated(prevProps: Props) {
